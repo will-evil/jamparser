@@ -1,15 +1,15 @@
 package csv
 
 import (
-	"os"
 	"encoding/csv"
+	"os"
 )
 
 // CSVData is type for data who will write to csv file.
 type CSVData [][]string
 
 // Write create csv file by provides path and write provided data to this file.
-func Write(path string, data CSVData) (error) {
+func Write(path string, data CSVData) error {
 	file, err := os.Create(path)
 	if err != nil {
 		return err

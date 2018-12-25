@@ -103,9 +103,6 @@ func getMakes(target string) (Makes, error) {
 
 	re := regexp.MustCompile(`(?U)id="brand".*>[\s\S]*<\/select>`)
 	re2 := regexp.MustCompile(`<option.*value="(.+)".*>(.+)<`)
-	if err != nil {
-		return makes, err
-	}
 
 	if re.MatchString(string(body)) {
 		results := re2.FindAllSubmatch(re.Find(body), -1)
